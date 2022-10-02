@@ -1,0 +1,22 @@
+.main-row {
+    height: 100vh;
+}
+
+.main-col {
+    max-width: 500px;
+    height: fit-content;
+}
+
+.todo-done {
+    text-decoration: line-through;
+}
+
+.container__list {
+    text-align: justify;
+}
+
+.col-11 {
+    background: #0072ffa1;
+    padding-top: 7px;
+    border-radius: 5px;
+}
