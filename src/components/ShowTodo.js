@@ -11,7 +11,7 @@ function ShowTodo(props) {
               <h6>{props.task}</h6>
           </div>
           <div className="col-1">
-          <button className='btn btn-primary' onClick={()=>{
+          <button className='btn btn-primary delete_icon' onClick={()=>{
               props.onSelect(props.id)
           }}><RiDeleteBin6Line /></button>
           </div>

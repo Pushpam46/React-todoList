@@ -16,7 +16,23 @@
 }
 
 .col-11 {
-    background: #0072ffa1;
+    background: #2e3236;
     padding-top: 7px;
     border-radius: 5px;
+}
+
+.delete_icon {
+    background: red;
+}
+
+.header_bg {
+    background: #304772;
+}
+
+.add_bg {
+    background: #3e62a7de;
+}
+
+.add_bg:hover {
+    background: #3e62a7de;
 }

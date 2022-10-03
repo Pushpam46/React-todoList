@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react'
 import './Todo.css'
 import ShowTodo from './ShowTodo'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const getLocalItems = () => {
     let list = localStorage.getItem('list')
 
@@ -20,8 +23,10 @@ function Todo() {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         const newData = task;
+
         setData([...data,newData])
-        setTask('')
+        setTask('');
+        toast.success("New task added successfully");
     }
 
     const deleteItem = (id) => {
@@ -29,6 +34,7 @@ function Todo() {
             return index != id
         })
         setData(filterData);
+        toast("Task deleted successfully");
     }
 
     useEffect(() => {
@@ -37,9 +43,10 @@ function Todo() {
 
     return (
         <div className='container container__input'>
+            <ToastContainer />
         <div className='row justify-content-center align-item-center main-row'>
             <div className='col shadow main-col bg-white'>
-                <div className='row bg-primary text-white'>
+                <div className='row header_bg text-white'>
                     <div className='col p-2'>
                         <h4 className='text-center'>Todo List</h4>
                     </div>
@@ -51,7 +58,7 @@ function Todo() {
                                 setTask(e.target.value)
                             }} required/>
                         </div>
-                        <button type='submit' className='btn btn-primary mb-2 ml-2 col-3'>Add todo</button>
+                        <button type='submit' className='btn add_bg btn-primary mb-2 ml-2 col-3'>Add todo</button>
                     </div>
                 </form>
 
